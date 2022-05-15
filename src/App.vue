@@ -20,7 +20,7 @@
               <div class="title has-text-centered">{{ countryA.name }} {{ toEmoji(countryA.country) }}</div>
             </div>
             <div class="hide-on-mobile">
-              <b-image :src="`./images/${countryA.country}/vector.svg`" :alt="`Map of ${countryA.name}`"></b-image>
+              <b-image :src="`/images/${countryA.country}/vector.svg`" :alt="`Map of ${countryA.name}`"></b-image>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
               <div class="title has-text-centered">{{ countryB.name }} {{ toEmoji(countryB.country) }}</div>
             </div>
             <div class="hide-on-mobile">
-              <b-image :src="`./images/${countryB.country}/vector.svg`" :alt="`Map of ${countryB.name}`"></b-image>
+              <b-image :src="`/images/${countryB.country}/vector.svg`" :alt="`Map of ${countryB.name}`"></b-image>
             </div>
           </div>
         </div>

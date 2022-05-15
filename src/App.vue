@@ -58,6 +58,9 @@
               <b-button v-if="showResults && !correct" @click="tryAgain" type="is-danger is-light mx-1"
                 >Try again?</b-button
               >
+              <b-button v-if="showResults && !correct" @click="share" type="is-danger is-light mx-1" icon-right="share"
+                >Share</b-button
+              >
               <b-button v-if="showResults && correct" @click="next" type="is-success is-light mx-1">Next</b-button>
             </div>
           </div>
@@ -1576,6 +1579,16 @@ export default {
       this.result = this.correct ? 'SOUTH' : 'NORTH';
       if (this.correct) this.score++;
       this.showResults = true;
+    },
+    share() {
+      navigator.clipboard.writeText(
+        `North or South\nhttps://north-or-south.bashista.xyz\nScore: ${this.score}\n${this.history}`
+      );
+      this.$buefy.toast.open({
+        message: 'Copied to clipboard!',
+        type: 'is-success',
+        position: 'is-bottom',
+      });
     },
     tryAgain() {
       this.result = '_____';
